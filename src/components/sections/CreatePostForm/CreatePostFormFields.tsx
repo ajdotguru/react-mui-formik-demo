@@ -1,12 +1,13 @@
 import { Grid, Button } from '@mui/material';
 import { TextField } from 'components/lib';
+import { EnumCreatePostFormFields } from './helpers';
 
 export const CreatePostFormFields = () => (
 	<Grid container spacing={2}>
 		<Grid item xs={12}>
 			<TextField
-				name="projectName"
-				id="projectName"
+				name={EnumCreatePostFormFields.PROJECT_NAME}
+				id={EnumCreatePostFormFields.PROJECT_NAME}
 				label="Project Name"
 				required={true}
 				maxLength={50}
@@ -15,8 +16,8 @@ export const CreatePostFormFields = () => (
 		</Grid>
 		<Grid item xs={12}>
 			<TextField
-				name="projectDescription"
-				id="projectDescription"
+				name={EnumCreatePostFormFields.PROJECT_DESCRIPTION}
+				id={EnumCreatePostFormFields.PROJECT_DESCRIPTION}
 				label="Project Description"
 				multiline={true}
 				minRows={4}
