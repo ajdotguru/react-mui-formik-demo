@@ -4,7 +4,7 @@ import { TextField } from 'components/lib';
 export const CreatePostFormFields = () => (
 	<Grid container spacing={2}>
 		<Grid item xs={12}>
-			<TextField name="projectName" id="projectName" label="Project Name" />
+			<TextField name="projectName" id="projectName" label="Project Name" required={true} />
 		</Grid>
 		<Grid item xs={12}>
 			<TextField
@@ -14,6 +14,7 @@ export const CreatePostFormFields = () => (
 				multiline={true}
 				minRows={4}
 				maxRows={4}
+				required={true}
 			/>
 		</Grid>
 		<Grid item xs={12}>

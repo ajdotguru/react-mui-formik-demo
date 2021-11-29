@@ -10,10 +10,21 @@ export const TextField: React.FC<TextFieldProps> = ({ label, ...props }) => {
 
 	return (
 		<>
-			<InputLabel htmlFor={props.id} required={props.required} sx={{ paddingY: 1 }}>
+			<InputLabel
+				htmlFor={props.id}
+				required={props.required}
+				sx={{ paddingY: 1 }}
+				error={(meta.error ?? '').length > 0}
+			>
 				{label}
 			</InputLabel>
-			<MUITextField fullWidth {...field} {...props} />
+			<MUITextField
+				fullWidth
+				{...field}
+				{...props}
+				error={(meta.error ?? '').length > 0}
+				helperText={meta.touched && meta.error ? meta.error : null}
+			/>
 		</>
 	);
 };
