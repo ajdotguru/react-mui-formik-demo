@@ -29,6 +29,8 @@ export const TextField: React.FC<ITextFieldProps & TextFieldProps> = ({ label, .
 				{...props}
 				error={(meta.error ?? '').length > 0}
 				helperText={meta.touched && meta.error ? meta.error : null}
+				FormHelperTextProps={{ sx: { marginX: 0 } }}
+				InputProps={{ sx: { borderRadius: '10px' } }}
 			/>
 		</>
 	);

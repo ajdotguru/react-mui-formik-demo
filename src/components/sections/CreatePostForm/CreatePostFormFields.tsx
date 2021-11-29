@@ -10,6 +10,7 @@ export const CreatePostFormFields = () => (
 				label="Project Name"
 				required={true}
 				maxLength={50}
+				placeholder="50 characters max"
 			/>
 		</Grid>
 		<Grid item xs={12}>
@@ -22,6 +23,7 @@ export const CreatePostFormFields = () => (
 				maxRows={4}
 				required={true}
 				maxLength={50}
+				placeholder="50 characters max"
 			/>
 		</Grid>
 		<Grid item xs={12}>
