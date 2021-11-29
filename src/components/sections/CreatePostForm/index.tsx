@@ -1,5 +1,5 @@
 import * as Yup from 'yup';
-import { Typography } from '@mui/material';
+import { Typography, Grid } from '@mui/material';
 import { Formik, Form, FormikHelpers } from 'formik';
 import { CreatePostFormFields } from './CreatePostFormFields';
 
@@ -46,7 +46,11 @@ export const CreatePostForm = () => {
 				validateOnChange={false}
 			>
 				<Form noValidate>
-					<CreatePostFormFields />
+					<Grid container>
+						<Grid item xs={12} md={8}>
+							<CreatePostFormFields />
+						</Grid>
+					</Grid>
 				</Form>
 			</Formik>
 		</>

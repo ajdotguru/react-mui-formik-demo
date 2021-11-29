@@ -1,23 +1,28 @@
-import { InputLabel, TextField as MUITextField, TextFieldProps } from '@mui/material';
+import { InputLabel, TextField as MUITextField, TextFieldProps, Box } from '@mui/material';
 import { useField } from 'formik';
 
-// type ITextFieldProps = TextFieldProps & FieldHookConfig<string>;
+interface ITextFieldProps {
+	maxLength: number;
+}
 
-export const TextField: React.FC<TextFieldProps> = ({ label, ...props }) => {
+export const TextField: React.FC<ITextFieldProps & TextFieldProps> = ({ label, ...props }) => {
 	const [field, meta] = useField(props.name!);
-
-	console.log('props :: ', { field, meta, props });
 
 	return (
 		<>
-			<InputLabel
-				htmlFor={props.id}
-				required={props.required}
-				sx={{ paddingY: 1 }}
-				error={(meta.error ?? '').length > 0}
-			>
-				{label}
-			</InputLabel>
+			<Box display="flex" justifyContent="space-between" alignItems="center">
+				<InputLabel
+					htmlFor={props.id}
+					required={props.required}
+					sx={{ paddingY: 1 }}
+					error={(meta.error ?? '').length > 0}
+				>
+					{label}
+				</InputLabel>
+				<InputLabel>
+					{field.value.length} / {props.maxLength}
+				</InputLabel>
+			</Box>
 			<MUITextField
 				fullWidth
 				{...field}
